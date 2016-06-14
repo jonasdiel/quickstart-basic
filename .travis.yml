@@ -2,7 +2,9 @@ language: php
 
 php:
   - 5.6
-
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install nodejs -qq
 before_script:
   - cp .env.travis .env
   - mysql -e 'create database homestead_test;'
